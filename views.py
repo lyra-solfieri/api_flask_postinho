@@ -90,12 +90,12 @@ class PacienteView(Resource):
         if paciente:
             db.session.delete(paciente)
             db.session.commit()
-            return {'message':'Deleted'}
+            return {'mensagem':'Apagado'}
         else:
-            return {'message': 'paciente não encontrado'},404
+            return {'mensagem': 'paciente não encontrado'},404
  
-api.add_resource(PacienteVieww, '/pacientess')
-api.add_resource(PacienteView,'/pacie/<string:name>')
+api.add_resource(PacienteVieww, '/pacientes')
+api.add_resource(PacienteView,'/paciente/<string:name>')
  
 app.debug = True
 if __name__ == '__main__':
